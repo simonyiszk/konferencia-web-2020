@@ -1,16 +1,13 @@
-# ⚛️ gatsby-starter-strict
+# konferencia-web-2020
 
-A Gatsby starter with strict linting and auto-formatting rules.
+The official web page of the XVII. Simonyi Konferencia
 
 ## 🚀 Getting started
 
-- Clone this project and install all the required dependencies _(e.g. with `npx gatsby new gatsby-example-site https://github.com/kripod/gatsby-starter-strict`)_
-- Start a development server with `yarn develop` or `npm run develop`
+- Recommended editor is Visual Studio Code
+- Clone this project and install all the required dependencies _(e.g. with `npx gatsby new konferencia-web-2020 https://github.com/simonyiszk/konferencia-web-2020`)_
+- Start a development server with `gatsby develop`, (`yarn develop` or `npm run develop`)
   - _Other scripts like `build`, [`format`](#automatic-code-formatting), [`type-check`](#static-type-checking) and [`lint`](#linting) are also available_
-
-### Deploy
-
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)]
 
 ## ✨ Developer experience
 

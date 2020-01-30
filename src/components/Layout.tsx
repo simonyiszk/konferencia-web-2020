@@ -2,6 +2,8 @@ import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 
+import Header from './Header';
+
 interface LayoutProps {
   children: React.ReactNode;
 }
@@ -34,11 +36,10 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
           content={`${data.site.siteMetadata.languageCode}_${data.site.siteMetadata.countryCode}`}
         />
       </Helmet>
-
-      <header>{/* TODO */}</header>
-
+      <header>
+        <Header />
+      </header>
       <main>{children}</main>
-
       <footer>{/* TODO */}</footer>
     </React.StrictMode>
   );

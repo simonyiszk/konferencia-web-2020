@@ -7,6 +7,7 @@ import Layout from '../components/Layout';
 export default function IndexPage(): JSX.Element {
   return (
     <Layout>
+      <div style={{ color: `purple`, fontSize: `72px` }}>Hello Gatsby!</div>
       <Box size="sm">
         <Image src={ImageSrc} />
       </Box>
