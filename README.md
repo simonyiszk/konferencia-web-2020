@@ -10,7 +10,7 @@ A Gatsby starter with strict linting and auto-formatting rules.
 
 ### Deploy
 
-[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/kripod/gatsby-starter-strict)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)]
 
 ## ✨ Developer experience
 
