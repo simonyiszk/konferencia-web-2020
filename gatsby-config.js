@@ -1,10 +1,9 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby Strict Starter',
-    description:
-      'Demo for a Gatsby starter with strict linting and auto-formatting rules.',
-    languageCode: 'en',
-    countryCode: 'US',
+    title: 'Simonyi Konferencia 2020',
+    description: 'XVII. Simonyi Konferencia',
+    languageCode: 'hu',
+    countryCode: 'HU',
   },
   plugins: [
     'gatsby-plugin-chakra-ui',
@@ -12,8 +11,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
-        name: 'Gatsby Strict Starter',
-        short_name: 'starter',
+        name: 'Simonyi Konferencia 2020',
+        short_name: 'simonyikonf',
         start_url: '/',
         background_color: '#663399',
         theme_color: '#663399',
