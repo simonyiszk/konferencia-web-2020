@@ -1,24 +1,19 @@
+import { Box, Flex, Heading, Image } from '@chakra-ui/core';
 import React from 'react';
 
-export default () => (
-  <div
-    style={{
-      margin: `3rem auto`,
-      padding: `0 1rem`,
-      backgroundColor: 'gray',
-    }}
-  >
-    <div
-      style={{
-        display: 'flex',
-        maxWidth: '66vw',
-        alignContent: 'center',
-        flexDirection: 'row',
-        margin: 'auto',
-      }}
-    >
-      <h3 style={{ margin: 'auto' }}>Előadók</h3>
-      <h3 style={{ margin: 'auto' }}>Rendezők</h3>
-    </div>
-  </div>
-);
+import HeroBG from '../assets/star_PNG76860.png';
+
+export default function Header() {
+  return (
+    <Box m={0} py={4} bg="gray">
+      <Flex flexDirection="row" maxWidth="66vw" align="center" m="auto">
+        <Heading as="h3" m="auto">
+          Előadók
+        </Heading>
+        <Heading as="h3" m="auto">
+          Szervezők
+        </Heading>
+      </Flex>
+    </Box>
+  );
+}
