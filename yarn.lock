@@ -1653,6 +1653,13 @@
   dependencies:
     "@types/react" "*"
 
+"@types/react-sticky-el@^1.0.2":
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/@types/react-sticky-el/-/react-sticky-el-1.0.2.tgz#dd544d164566829b5857783de19ae1892e99835a"
+  integrity sha512-LjtfYEAKylFdTXMdoOnt2qVLf6BgrudNPeMxYu6rIqSEjN2eRE3yQkWvaodiYjMH474DQi04kwjt4SD3bdv5Bw==
+  dependencies:
+    "@types/react" "*"
+
 "@types/react-test-renderer@*":
   version "16.9.2"
   resolved "https://registry.yarnpkg.com/@types/react-test-renderer/-/react-test-renderer-16.9.2.tgz#e1c408831e8183e5ad748fdece02214a7c2ab6c5"
