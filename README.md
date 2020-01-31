@@ -8,7 +8,7 @@ The official web page of the XVII. Simonyi Konferencia
 - Install Node 12 and Yarn v1
 - Clone this project and install all the required dependencies _(e.g. with `npx gatsby new konferencia-web-2020 https://github.com/simonyiszk/konferencia-web-2020`)_
 - Install dependencies with `yarn install`
-- Start a development server with `gatsby develop`, (`yarn develop` or `npm run develop`)
+- Start a development server with `yarn develop` (`gatsby develop`)
   - _Other scripts like `build`, [`format`](#automatic-code-formatting), [`type-check`](#static-type-checking) and [`lint`](#linting) are also available_
 
 ## ✨ Developer experience
