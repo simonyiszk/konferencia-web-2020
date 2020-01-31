@@ -2,7 +2,7 @@
 
 The official web page of the XVII. Simonyi Konferencia
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/0846b2e0-eb9c-4169-afe8-f7e6550f0a05/deploy-status)](https://app.netlify.com/sites/ecstatic-bohr-5e4f63/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/0846b2e0-eb9c-4169-afe8-f7e6550f0a05/deploy-status)](https://app.netlify.com/sites/simonyi-konf-2020/deploys)
 
 ## 🚀 Getting started
 
