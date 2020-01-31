@@ -1,24 +1,32 @@
+import { Box, Flex, Heading, Image } from '@chakra-ui/core';
 import React from 'react';
 
-export default () => (
-  <div
-    style={{
-      margin: `3rem auto`,
-      padding: `0 1rem`,
-      backgroundColor: 'gray',
-    }}
-  >
-    <div
-      style={{
-        display: 'flex',
-        maxWidth: '66vw',
-        alignContent: 'center',
-        flexDirection: 'row',
-        margin: 'auto',
-      }}
-    >
-      <h3 style={{ margin: 'auto' }}>Előadók</h3>
-      <h3 style={{ margin: 'auto' }}>Rendezők</h3>
-    </div>
-  </div>
-);
+import HeroBG from '../assets/star_PNG76860.png';
+import customTheme from '../gatsby-plugin-chakra-ui/theme';
+
+export default function Header(): JSX.Element {
+  return (
+    <Box m={0} p={0} h="100vh">
+      <Image src={HeroBG} w="100vw" maxW="100%" />
+      <Box
+        m="auto"
+        p={4}
+        bg="gray.900"
+        position="absolute"
+        bottom="0px"
+        w="100vw"
+        maxW="100%"
+        zIndex="sticky"
+      >
+        <Flex flexDirection="row" maxWidth="66vw" align="center" m="auto">
+          <Heading as="h3" m="auto">
+            Előadók
+          </Heading>
+          <Heading as="h3" m="auto">
+            Szervezők
+          </Heading>
+        </Flex>
+      </Box>
+    </Box>
+  );
+}
