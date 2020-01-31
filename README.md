@@ -19,6 +19,8 @@ The official web page of the XVII. Simonyi Konferencia
 ## ✨ Developer experience
 
 - After someone introduces a new dependency you need to run `yarn` after pull, to add said dependency.
+- If you want to add a new dependency, it needs to have types: https://microsoft.github.io/TypeSearch/
+  - Alternatively you can add a new line to the `decalrations.d.ts` file: `declare module "name-of-package"`
 
 ### Automatic code formatting
 
