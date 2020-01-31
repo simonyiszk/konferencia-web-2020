@@ -6,8 +6,8 @@ The official web page of the XVII. Simonyi Konferencia
 
 - Recommended editor is Visual Studio Code
 - Install Node 12 and Yarn v1
-- Clone this project and install all the required dependencies _(e.g. with `npx gatsby new konferencia-web-2020 https://github.com/simonyiszk/konferencia-web-2020`)_
-- Install dependencies with `yarn install`
+- Clone this project and install all the required dependencies with `npx gatsby new konferencia-web-2020 https://github.com/simonyiszk/konferencia-web-2020`
+- Select yarn as preferred package manager
 - Start a development server with `yarn develop` (`gatsby develop`)
   - _Other scripts like `build`, [`format`](#automatic-code-formatting), [`type-check`](#static-type-checking) and [`lint`](#linting) are also available_
 
