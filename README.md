@@ -16,6 +16,8 @@ The official web page of the XVII. Simonyi Konferencia
 
 ## ✨ Developer experience
 
+- After someone introduces a new dependency you need to run `yarn` after pull, to add said dependency.
+
 ### Automatic code formatting
 
 [Prettier][] aims to provide codebase consistency when multiple developers work on the same project. The main reason behind adopting it is to [stop all the on-going debates over coding styles][].
