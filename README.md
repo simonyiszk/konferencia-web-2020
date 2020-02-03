@@ -43,3 +43,10 @@ Source code is linted by [ESLint][], enforcing the [Airbnb JavaScript Style Guid
 [eslint]: https://eslint.org/
 [airbnb javascript style guide]: https://github.com/airbnb/javascript
 [eslint-config-airbnb]: https://github.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb
+
+## Some reads
+
+### Parallax
+
+- https://keithclark.co.uk/articles/pure-css-parallax-websites/
+- https://keithclark.co.uk/articles/practical-css-parallax/
