@@ -1,20 +1,17 @@
 import { Box, Flex, Heading, Image } from '@chakra-ui/core';
-import React, { Component } from 'react';
-import { Parallax } from 'react-scroll-parallax';
+import React from 'react';
+import { Parallax, ParallaxContext } from 'react-scroll-parallax';
 import Sticky from 'react-sticky-el';
 
 import HeroBG from '../assets/star_PNG76860.png';
 import customTheme from '../gatsby-plugin-chakra-ui/theme';
-import ParallaxCache from './ParallaxCache';
 
 export default function Header(): JSX.Element {
   return (
     <Box m={0} p={0} h="100vh">
-      <ParallaxCache />
       <Parallax className="custom-class" y={[-50, 100]} tagOuter="figure">
-        <Image src={HeroBG} /* w="100vw" maxW="100%" */ />
+        <Image src={HeroBG} w="100vw" maxW="100%" />
       </Parallax>
-
       <Box
         m={0}
         p={0}
