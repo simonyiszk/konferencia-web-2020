@@ -31,7 +31,7 @@ export function Parallax3DGroup({ children }: LayoutProps): JSX.Element {
       css={{ transformStyle: 'preserve-3d' }}
       fontSize="200%"
       /* zIndex="-2000" */
-      transform="translate3d(700px, 0, -800px) rotateY(30deg)"
+      /* transform="translate3d(700px, 0, -800px) rotateY(30deg)" */
     >
       {children}
     </Box>
