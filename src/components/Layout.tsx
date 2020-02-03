@@ -37,12 +37,15 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
           content={`${data.site.siteMetadata.languageCode}_${data.site.siteMetadata.countryCode}`}
         />
       </Helmet>
+
       <ParallaxProvider>
         <header>
           <Header />
         </header>
+
         <main>{children}</main>
       </ParallaxProvider>
+
       <footer>{/* TODO */}</footer>
     </React.StrictMode>
   );
