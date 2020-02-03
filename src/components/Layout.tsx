@@ -40,7 +40,7 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
       </Helmet>
 
       <Parallax3DProvider>
-        <header>
+        <header css={{ transformStyle: 'preserve-3d' }}>
           <Header />
         </header>
 
