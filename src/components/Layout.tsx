@@ -73,17 +73,15 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
         `}
       />
       <ColorModeProvider>
-        <DarkMode>
-          <Parallax3DProvider>
-            <Hero />
+        <Parallax3DProvider>
+          <Hero />
+          <ColorModeExample />
+          <NavBar />
 
-            <NavBar />
+          <main>{children}</main>
 
-            <main>{children}</main>
-
-            <footer>{/* TODO */}</footer>
-          </Parallax3DProvider>
-        </DarkMode>
+          <footer>{/* TODO */}</footer>
+        </Parallax3DProvider>
       </ColorModeProvider>
     </React.StrictMode>
   );
