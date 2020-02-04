@@ -8,13 +8,14 @@ import customTheme from '../gatsby-plugin-chakra-ui/theme';
 import {
   Parallax3DGroup,
   Parallax3DLayerBack,
+  Parallax3DLayerDeep,
   Parallax3DLayerFore,
   Parallax3DProvider,
 } from './Parallax3D';
 
-export default function Header(): JSX.Element {
+export default function Hero(): JSX.Element {
   return (
-    <Box m={0} p={0} h="100vh">
+    <Box as="header" m={0} p={0} h="calc(100vh - 77px)">
       <Parallax3DGroup>
         <Parallax3DLayerBack>
           <Box
@@ -24,7 +25,7 @@ export default function Header(): JSX.Element {
             top="50%"
             transform="translate(-50%, -50%)"
           >
-            asd
+            <Image src={HeroBG} w="100vw" maxW="unset" />
           </Box>
         </Parallax3DLayerBack>
         <Parallax3DLayerFore>
@@ -35,35 +36,31 @@ export default function Header(): JSX.Element {
             top="50%"
             transform="translate(-50%, -50%)"
           >
-            asd
+            <Image
+              src={HeroBG}
+              w="150vw"
+              maxW="unset"
+              transform="translate(-50px, -50px)"
+            />
           </Box>
         </Parallax3DLayerFore>
-      </Parallax3DGroup>
-
-      <Image src={HeroBG} w="100vw" maxW="100%" />
-
-      <Box
-        m={0}
-        p={0}
-        position="absolute"
-        bottom={0}
-        w="100vw"
-        maxW="100%"
-        zIndex="sticky"
-      >
-        <Sticky>
-          <Box m="auto" p={4} bg="gray.900">
-            <Flex flexDirection="row" maxWidth="66vw" align="center" m="auto">
-              <Heading as="h3" m="auto">
-                Előadók
-              </Heading>
-              <Heading as="h3" m="auto">
-                Szervezők
-              </Heading>
-            </Flex>
+        <Parallax3DLayerDeep>
+          <Box
+            css={{ textAlign: 'center' }}
+            position="absolute"
+            left="50%"
+            top="50%"
+            transform="translate(-50%, -50%)"
+          >
+            <Image
+              src={HeroBG}
+              w="100vw"
+              maxW="unset"
+              transform="translate(50px, 50px) scaleX(-1)"
+            />
           </Box>
-        </Sticky>
-      </Box>
+        </Parallax3DLayerDeep>
+      </Parallax3DGroup>
     </Box>
   );
 }
