@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Image } from '@chakra-ui/core';
+import { Box, Image } from '@chakra-ui/core';
 import React from 'react';
 import { Parallax, ParallaxContext } from 'react-scroll-parallax';
 import Sticky from 'react-sticky-el';
@@ -10,7 +10,6 @@ import {
   Parallax3DLayerBack,
   Parallax3DLayerDeep,
   Parallax3DLayerFore,
-  Parallax3DProvider,
 } from './Parallax3D';
 
 export default function Hero(): JSX.Element {

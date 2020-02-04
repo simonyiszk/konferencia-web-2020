@@ -1,15 +1,6 @@
 /* import '../css/all.css'; */
 
-import {
-  Box,
-  Button,
-  ColorModeProvider,
-  DarkMode,
-  Flex,
-  Heading,
-  ThemeProvider,
-  useColorMode,
-} from '@chakra-ui/core';
+import { ColorModeProvider, useColorMode } from '@chakra-ui/core';
 import { css, Global } from '@emotion/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
@@ -45,20 +36,6 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
       toggleColorMode();
     }
     return null;
-  }
-
-  function ColorModeExample() {
-    const { colorMode, toggleColorMode } = useColorMode();
-    if (colorMode === 'light') {
-      toggleColorMode();
-    }
-    return (
-      <header>
-        <Button onClick={toggleColorMode}>
-          Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-        </Button>
-      </header>
-    );
   }
 
   return (

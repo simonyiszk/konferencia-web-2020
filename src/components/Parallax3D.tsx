@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Image } from '@chakra-ui/core';
+import { Box } from '@chakra-ui/core';
 import React from 'react';
 
 interface LayoutProps {
