@@ -1,4 +1,4 @@
-import { Box, Flex, Heading, Image } from '@chakra-ui/core';
+import { Box } from '@chakra-ui/core';
 import React from 'react';
 
 interface LayoutProps {
@@ -8,7 +8,7 @@ interface LayoutProps {
 export function Parallax3DProvider({ children }: LayoutProps): JSX.Element {
   return (
     <Box
-      id="ParallaxProvider"
+      id="Parallax3DProvider"
       m={0}
       p={0}
       h="100vh"
@@ -25,7 +25,7 @@ export function Parallax3DProvider({ children }: LayoutProps): JSX.Element {
 export function Parallax3DGroup({ children }: LayoutProps): JSX.Element {
   return (
     <Box
-      id="ParallaxGroup"
+      id="Parallax3DGroup"
       m={0}
       p={0}
       position="relative"

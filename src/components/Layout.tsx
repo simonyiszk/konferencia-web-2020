@@ -1,12 +1,15 @@
 /* import '../css/all.css'; */
 
+import { ColorModeProvider, useColorMode } from '@chakra-ui/core';
 import { css, Global } from '@emotion/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { ParallaxProvider } from 'react-scroll-parallax';
+import Sticky from 'react-sticky-el';
 
-import Header from './Header';
+import Hero from './Hero';
+import NavBar from './NavBar';
 import { Parallax3DProvider } from './Parallax3D';
 
 interface LayoutProps {
@@ -26,6 +29,14 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
       }
     }
   `);
+
+  function Dark() {
+    const { colorMode, toggleColorMode } = useColorMode();
+    if (colorMode === 'light') {
+      toggleColorMode();
+    }
+    return null;
+  }
 
   return (
     <React.StrictMode>
@@ -49,16 +60,18 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
           }
         `}
       />
+      <ColorModeProvider>
+        <Dark />
+        <Parallax3DProvider>
+          <Hero />
 
-      <Parallax3DProvider>
-        <header>
-          <Header />
-        </header>
+          <NavBar />
 
-        <main>{children}</main>
+          <main>{children}</main>
 
-        <footer>{/* TODO */}</footer>
-      </Parallax3DProvider>
+          <footer>{/* TODO */}</footer>
+        </Parallax3DProvider>
+      </ColorModeProvider>
     </React.StrictMode>
   );
 }
