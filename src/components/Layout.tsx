@@ -39,8 +39,19 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
     }
   `);
 
+  function Dark() {
+    const { colorMode, toggleColorMode } = useColorMode();
+    if (colorMode === 'light') {
+      toggleColorMode();
+    }
+    return null;
+  }
+
   function ColorModeExample() {
     const { colorMode, toggleColorMode } = useColorMode();
+    if (colorMode === 'light') {
+      toggleColorMode();
+    }
     return (
       <header>
         <Button onClick={toggleColorMode}>
@@ -73,9 +84,10 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
         `}
       />
       <ColorModeProvider>
+        <Dark />
         <Parallax3DProvider>
           <Hero />
-          <ColorModeExample />
+
           <NavBar />
 
           <main>{children}</main>
