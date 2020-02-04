@@ -14,7 +14,7 @@ import {
 
 export default function Header(): JSX.Element {
   return (
-    <Box m={0} p={0} h="100vh" css={{ transformStyle: 'preserve-3d' }}>
+    <Box m={0} p={0} h="100vh">
       <Parallax3DGroup>
         <Parallax3DLayerBack>
           <Box

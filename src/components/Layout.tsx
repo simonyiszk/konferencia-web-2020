@@ -1,5 +1,6 @@
-import '../css/all.css';
+/* import '../css/all.css'; */
 
+import { css, Global } from '@emotion/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
@@ -41,8 +42,16 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
         />
       </Helmet>
 
+      <Global
+        styles={css`
+          * {
+            transform-style: preserve-3d;
+          }
+        `}
+      />
+
       <Parallax3DProvider>
-        <header css={{ transformStyle: 'preserve-3d' }}>
+        <header>
           <Header />
         </header>
 
