@@ -1,6 +1,6 @@
 /* import '../css/all.css'; */
 
-import { Box, Flex, Heading } from '@chakra-ui/core';
+import { Box, DarkMode, Flex, Heading } from '@chakra-ui/core';
 import { css, Global } from '@emotion/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
@@ -52,16 +52,17 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
           }
         `}
       />
+      <DarkMode>
+        <Parallax3DProvider>
+          <Hero />
 
-      <Parallax3DProvider>
-        <Hero />
+          <NavBar />
 
-        <NavBar />
+          <main>{children}</main>
 
-        <main>{children}</main>
-
-        <footer>{/* TODO */}</footer>
-      </Parallax3DProvider>
+          <footer>{/* TODO */}</footer>
+        </Parallax3DProvider>
+      </DarkMode>
     </React.StrictMode>
   );
 }
