@@ -46,6 +46,11 @@ Source code is linted by [ESLint][], enforcing the [Airbnb JavaScript Style Guid
 
 ## Some reads
 
+### Chakra UI
+
+- https://chakra-ui.com/style-props
+- https://chakra-ui.com/box
+
 ### Parallax
 
 - https://keithclark.co.uk/articles/pure-css-parallax-websites/
