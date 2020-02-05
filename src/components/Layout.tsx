@@ -62,6 +62,7 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
       />
       <ColorModeProvider>
         <Dark />
+
         <Parallax3DProvider>
           <Hero />
 
