@@ -20,4 +20,6 @@ export const stackedPlaceholderData = [
   placeholderData,
   placeholderData,
   placeholderData,
+  placeholderData,
+  placeholderData,
 ];

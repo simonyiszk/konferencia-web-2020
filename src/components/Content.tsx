@@ -1,40 +1,35 @@
 import { Box, Flex, Heading, Image, PseudoBox } from '@chakra-ui/core';
+import { Interpolation } from '@emotion/core';
 import React from 'react';
 
 import favicon from '../assets/favicon.png';
 import { stackedPlaceholderData } from '../data/data';
 
 export default function Content(): JSX.Element {
-  const asd = stackedPlaceholderData[0][0];
-  const i = 0;
   return (
     <Box>
       {stackedPlaceholderData.map(item => (
         <PseudoBox
-          as={(props): JSX.Element => (
-            <Box
-              bg="purple.900"
-              p={4}
-              ml={32}
-              mt={16}
-              pr={32}
-              borderRadius="0px 42px 42px 0px"
-              {...props}
-            />
-          )}
+          as={(props): JSX.Element => <Box {...props} />}
+          bg="#252341"
           key={item}
           p={4}
+          mt={16}
+          css={(theme): Interpolation => ({
+            backgroundColor: `${theme.colors.purple[900]}77`,
+          })}
+          _first={{ marginTop: 4 }}
           _odd={{
-            marginLeft: 0,
-            marginRight: 32,
-            paddingLeft: 32,
-            borderRadius: '0px 42px 42px 0px',
-          }}
-          _even={{
             marginLeft: 32,
             marginRight: 0,
             paddingRight: 32,
             borderRadius: '42px 0px 0px 42px',
+          }}
+          _even={{
+            marginLeft: 0,
+            marginRight: 32,
+            paddingLeft: 32,
+            borderRadius: '0px 42px 42px 0px',
           }}
         >
           <Flex direction="row" align="center">
