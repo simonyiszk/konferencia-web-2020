@@ -22,13 +22,13 @@ export default function Content(): JSX.Element {
           _odd={{
             marginLeft: 32,
             marginRight: 0,
-            paddingRight: 32,
+            paddingRight: '9rem',
             borderRadius: '42px 0px 0px 42px',
           }}
           _even={{
             marginLeft: 0,
             marginRight: 32,
-            paddingLeft: 32,
+            paddingLeft: '9rem',
             borderRadius: '0px 42px 42px 0px',
           }}
         >
