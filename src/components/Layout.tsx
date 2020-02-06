@@ -1,6 +1,6 @@
 /* import '../css/all.css'; */
 
-import { ColorModeProvider, useColorMode } from '@chakra-ui/core';
+import { Box, ColorModeProvider, useColorMode } from '@chakra-ui/core';
 import { css, Global } from '@emotion/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
@@ -68,7 +68,7 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
 
           <NavBar />
 
-          <main>{children}</main>
+          <Box as="main">{children}</Box>
 
           <footer>{/* TODO */}</footer>
         </Parallax3DProvider>
