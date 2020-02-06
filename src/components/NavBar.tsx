@@ -2,6 +2,7 @@ import { Box, Flex, Heading, Image, PseudoBox } from '@chakra-ui/core';
 import React from 'react';
 
 import Logo from '../assets/Logo.png';
+import { navBarData } from '../data/data';
 
 export default function NavBar(): JSX.Element {
   return (
@@ -15,16 +16,17 @@ export default function NavBar(): JSX.Element {
       maxW="100%"
       zIndex="sticky"
     >
-      <Box m="auto" p={4} bg="gray.500">
+      <Box m="auto" p={4} bg="purple.900">
         <Flex m="auto" align="center" direction="row">
           <Box maxH={45}>
             <Image src={Logo} maxH="inherit" />
           </Box>
-          <Flex position="absolute" right={0} direction="row">
-            {['Helyszín', 'Előadók', 'Kapcsolat', 'Támogatók'].map(item => (
+          <Flex minW={550} position="absolute" right={0} direction="row">
+            {navBarData.map(item => (
               <PseudoBox
-                // eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-                as={props => <Heading as="h3" size="lg" {...props} />}
+                as={(props): JSX.Element => (
+                  <Heading as="h3" size="lg" {...props} />
+                )}
                 key={item}
                 px={4}
                 _first={{ paddingLeft: 0 }}

@@ -1,8 +1,15 @@
 import { Box } from '@chakra-ui/core';
+import { css } from '@emotion/core';
 import React from 'react';
 
 interface LayoutProps {
   children: React.ReactNode;
+}
+
+interface GroupProps {
+  children: React.ReactNode;
+  debug?: boolean;
+  rotate?: boolean;
 }
 
 export function Parallax3DProvider({ children }: LayoutProps): JSX.Element {
@@ -22,7 +29,39 @@ export function Parallax3DProvider({ children }: LayoutProps): JSX.Element {
   );
 }
 
-export function Parallax3DGroup({ children }: LayoutProps): JSX.Element {
+export function Parallax3DGroup({
+  children,
+  debug,
+  rotate,
+  ...props
+}: GroupProps): JSX.Element {
+  const normalStyle = css`
+    transform-style: preserve-3d;
+  `;
+
+  const debugStyle = css`
+    transform-style: preserve-3d;
+    & > div {
+      box-shadow: 0 0 0 2px #000;
+    }
+  `;
+
+  const rotateStyle = css`
+    transform-style: preserve-3d;
+    transform: translate3d(700px, 0, -800px) rotateY(30deg);
+    & > div {
+      box-shadow: 0 0 0 2px #000;
+    }
+  `;
+  let selectedStyle = normalStyle;
+
+  if (debug) {
+    selectedStyle = debugStyle;
+  }
+  if (rotate) {
+    selectedStyle = rotateStyle;
+  }
+
   return (
     <Box
       id="Parallax3DGroup"
@@ -30,18 +69,22 @@ export function Parallax3DGroup({ children }: LayoutProps): JSX.Element {
       p={0}
       position="relative"
       height="100vh"
-      css={{ transformStyle: 'preserve-3d' }}
+      css={selectedStyle}
       fontSize="200%"
       pointerEvents="none"
       /* zIndex="-2000" */
       /* transform="translate3d(700px, 0, -800px) rotateY(30deg)" */
+      {...props}
     >
       {children}
     </Box>
   );
 }
 
-export function Parallax3DLayerFore({ children }: LayoutProps): JSX.Element {
+export function Parallax3DLayerFore({
+  children,
+  ...props
+}: LayoutProps): JSX.Element {
   return (
     <Box
       id="LayerFore"
@@ -54,14 +97,17 @@ export function Parallax3DLayerFore({ children }: LayoutProps): JSX.Element {
       bottom={0}
       transform="translateZ(90px) scale(.7)"
       pointerEvents="auto"
-      boxShadow="0 0 0 2px #000"
+      {...props}
     >
       {children}
     </Box>
   );
 }
 
-export function Parallax3DLayerBack({ children }: LayoutProps): JSX.Element {
+export function Parallax3DLayerBack({
+  children,
+  ...props
+}: LayoutProps): JSX.Element {
   return (
     <Box
       id="LayerBack"
@@ -74,14 +120,17 @@ export function Parallax3DLayerBack({ children }: LayoutProps): JSX.Element {
       bottom={0}
       transform="translateZ(-300px) scale(2)"
       pointerEvents="auto"
-      boxShadow="0 0 0 2px #000"
+      {...props}
     >
       {children}
     </Box>
   );
 }
 
-export function Parallax3DLayerDeep({ children }: LayoutProps): JSX.Element {
+export function Parallax3DLayerDeep({
+  children,
+  ...props
+}: LayoutProps): JSX.Element {
   return (
     <Box
       id="LayerDeep"
@@ -94,7 +143,7 @@ export function Parallax3DLayerDeep({ children }: LayoutProps): JSX.Element {
       bottom={0}
       transform="translateZ(-600px) scale(3)"
       pointerEvents="auto"
-      boxShadow="0 0 0 2px #000"
+      {...props}
     >
       {children}
     </Box>
