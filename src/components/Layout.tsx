@@ -30,7 +30,7 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
     }
   `);
 
-  function Dark() {
+  function Dark(): null {
     const { colorMode, toggleColorMode } = useColorMode();
     if (colorMode === 'light') {
       toggleColorMode();

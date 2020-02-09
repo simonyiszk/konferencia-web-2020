@@ -3,7 +3,7 @@ import React from 'react';
 
 import ImageSrc from '../assets/favicon.png';
 import HeroBG from '../assets/star_PNG76860.png';
-import Content from '../components/Content';
+import { Content, GridContent } from '../components/Content';
 import Layout from '../components/Layout';
 
 export default function IndexPage(): JSX.Element {

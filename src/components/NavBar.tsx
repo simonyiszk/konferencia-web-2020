@@ -21,7 +21,7 @@ export default function NavBar(): JSX.Element {
           <Box maxH={45}>
             <Image src={Logo} maxH="inherit" />
           </Box>
-          <Flex minW={550} position="absolute" right={0} direction="row">
+          <Flex position="absolute" right={0} direction="row">
             {navBarData.map(item => (
               <PseudoBox
                 as={(props): JSX.Element => (
