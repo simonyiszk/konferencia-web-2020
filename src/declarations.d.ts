@@ -8,3 +8,4 @@
 
 declare module '*.png';
 declare module 'react-sticky-el';
+declare module '*.js';
