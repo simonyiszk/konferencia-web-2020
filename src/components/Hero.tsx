@@ -55,7 +55,7 @@ export default function Hero(): JSX.Element {
               src={HeroBG}
               w="100vw"
               maxW="unset"
-              transform="translate(50px, 50px) scaleX(-1)"
+              transform="translate(50px, 50px)"
             />
           </Box>
         </Parallax3DLayerDeep>

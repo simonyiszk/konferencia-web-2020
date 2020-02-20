@@ -21,9 +21,8 @@ export function Parallax3DProvider({ children }: LayoutProps): JSX.Element {
       h="100vh"
       w="100vw"
       overflowX="hidden"
-      overflowY="auto"
+      overflowY="scroll"
       css={css`
-        perspective: 300px;
         -webkit-overflow-scrolling: touch;
         transform-style: preserve-3d;
         * {
@@ -44,10 +43,12 @@ export function Parallax3DGroup({
 }: GroupProps): JSX.Element {
   const normalStyle = css`
     transform-style: preserve-3d;
+    perspective: 300px;
   `;
 
   const debugStyle = css`
     transform-style: preserve-3d;
+    perspective: 300px;
     & > div {
       box-shadow: 0 0 0 2px #000;
     }
@@ -55,6 +56,7 @@ export function Parallax3DGroup({
 
   const rotateStyle = css`
     transform-style: preserve-3d;
+    perspective: 300px;
     transform: translate3d(700px, 0, -800px) rotateY(30deg);
     & > div {
       box-shadow: 0 0 0 2px #000;
@@ -97,12 +99,12 @@ export function Parallax3DLayerFore({
       id="LayerFore"
       m={0}
       p={0}
-      position="absolute"
+      position="sticky"
       top={0}
       left={0}
       right={0}
       bottom={0}
-      transform="translateZ(90px) scale(.7)"
+      transform="translateZ(-12000px) scale(32)"
       pointerEvents="auto"
       {...props}
     >
@@ -120,7 +122,7 @@ export function Parallax3DLayerBack({
       id="LayerBack"
       m={0}
       p={0}
-      position="absolute"
+      position="sticky"
       top={0}
       left={0}
       right={0}
@@ -143,12 +145,12 @@ export function Parallax3DLayerDeep({
       id="LayerDeep"
       m={0}
       p={0}
-      position="absolute"
+      position="sticky"
       top={0}
       left={0}
       right={0}
       bottom={0}
-      transform="translateZ(-600px) scale(3)"
+      transform="translateZ(-90px) scale(1)"
       pointerEvents="auto"
       {...props}
     >
