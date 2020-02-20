@@ -1,13 +1,19 @@
-/* import '../css/all.css'; */
+/** @jsx jsx */
 
-import { Box, ColorModeProvider, useColorMode } from '@chakra-ui/core';
-import { css, Global } from '@emotion/core';
+import {
+  Box,
+  ColorModeProvider,
+  ThemeProvider,
+  useColorMode,
+} from '@chakra-ui/core';
+import { css, Global, jsx } from '@emotion/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import Sticky from 'react-sticky-el';
 
+import customTheme from '../gatsby-plugin-chakra-ui/theme';
 import Hero from './Hero';
 import NavBar from './NavBar';
 import { Parallax3DProvider } from './Parallax3D';
@@ -30,7 +36,7 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
     }
   `);
 
-  function Dark() {
+  function Dark(): null {
     const { colorMode, toggleColorMode } = useColorMode();
     if (colorMode === 'light') {
       toggleColorMode();
@@ -52,7 +58,7 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
           content={`${data.site.siteMetadata.languageCode}_${data.site.siteMetadata.countryCode}`}
         />
       </Helmet>
-
+      {/*
       <Global
         styles={css`
           * {
@@ -60,19 +66,22 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
           }
         `}
       />
-      <ColorModeProvider>
-        <Dark />
+      */}
+      <ThemeProvider theme={customTheme}>
+        <ColorModeProvider>
+          <Dark />
 
-        <Parallax3DProvider>
-          <Hero />
+          <Parallax3DProvider>
+            <Hero />
 
-          <NavBar />
+            <NavBar />
 
-          <Box as="main">{children}</Box>
+            <Box as="main">{children}</Box>
 
-          <footer>{/* TODO */}</footer>
-        </Parallax3DProvider>
-      </ColorModeProvider>
+            <footer>{/* TODO */}</footer>
+          </Parallax3DProvider>
+        </ColorModeProvider>
+      </ThemeProvider>
     </React.StrictMode>
   );
 }
