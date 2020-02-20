@@ -1,7 +1,12 @@
-/* import '../css/all.css'; */
+/** @jsx jsx */
 
-import { Box, ColorModeProvider, useColorMode } from '@chakra-ui/core';
-import { css, Global } from '@emotion/core';
+import {
+  Box,
+  ColorModeProvider,
+  ThemeProvider,
+  useColorMode,
+} from '@chakra-ui/core';
+import { css, Global, jsx } from '@emotion/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
@@ -60,19 +65,18 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
           }
         `}
       />
-      <ColorModeProvider>
-        <Dark />
 
-        <Parallax3DProvider>
-          <Hero />
+      <Dark />
 
-          <NavBar />
+      <Parallax3DProvider>
+        <Hero />
 
-          <Box as="main">{children}</Box>
+        <NavBar />
 
-          <footer>{/* TODO */}</footer>
-        </Parallax3DProvider>
-      </ColorModeProvider>
+        <Box as="main">{children}</Box>
+
+        <footer>{/* TODO */}</footer>
+      </Parallax3DProvider>
     </React.StrictMode>
   );
 }

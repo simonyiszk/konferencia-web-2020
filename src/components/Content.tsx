@@ -9,58 +9,40 @@ import {
 } from '@chakra-ui/core';
 import { css, Interpolation } from '@emotion/core';
 import React from 'react';
+import { findRenderedComponentWithType } from 'react-dom/test-utils';
 
 import favicon from '../assets/favicon.png';
 import { placeholderData, stackedPlaceholderData } from '../data/data';
 
-export function GridContent(): JSX.Element {
-  return (
-    <Box>
-      <Grid templateColumns="minmax(1.2rem, 1fr) minmax(auto, 77ch) minmax(1.2rem, 1fr)">
-        <Box gridColumn={2}>{placeholderData[1]}</Box>
-        <Box gridColumn={2}>{placeholderData[1]}</Box>
-        <Box gridColumn={2}>{placeholderData[1]}</Box>
-        <Box gridColumn={2}>{placeholderData[1]}</Box>
-        <Box gridColumn={2}>{placeholderData[1]}</Box>
-      </Grid>
-    </Box>
-  );
-}
-
-export function Content(): JSX.Element {
+export default function Content(): JSX.Element {
   const bg = `${theme.colors.purple[900]}77`;
 
   return (
     <Box>
       {stackedPlaceholderData.map(item => (
         <PseudoBox
-          as={(props): JSX.Element => <Flex {...props} />}
+          as={Flex}
           bg={bg}
-          key={item}
+          key={item[0]}
           p={4}
           mt={16}
-          direction="row"
-          align="center"
-          justify="center"
-          css={css`
-            @media screen and (max-width: 830px) {
-              flex-direction: column;
-            }
-          `}
+          flexDirection={['column', 'column', 'row']}
+          alignItems="center"
+          justifyContent="flex-start"
           _first={{ marginTop: 4 }}
           _odd={{
-            marginLeft: '9vw',
+            marginLeft: [4, 12, 24, 64],
             marginRight: 0,
             borderRadius: '42px 0px 0px 42px',
           }}
           _even={{
             marginLeft: 0,
-            marginRight: '9vw',
+            marginRight: [4, 12, 24, 64],
             borderRadius: '0px 42px 42px 0px',
-            flexDirection: 'row-reverse',
+            flexDirection: ['column', 'column', 'row-reverse'],
           }}
         >
-          <Flex direction="column" align="center">
+          <Flex direction="column" align="center" m={4}>
             <Image
               src={favicon}
               maxW={32}
@@ -69,14 +51,45 @@ export function Content(): JSX.Element {
               minH={16}
               p={4}
             />
-            <Heading as="h4" size="md" textAlign="center">
-              {item[0]}
+            <Heading as="h4" size="sm" textAlign="center">
+              {item[3]}
             </Heading>
           </Flex>
 
-          <Box px={4} maxW="77ch" textAlign="justify">
-            {item[1]}
-          </Box>
+          <Flex
+            px={4}
+            maxW="100ch"
+            direction="column"
+            align={['center', 'center', 'flex-start']}
+            justify="center"
+          >
+            <Box
+              as="h2"
+              color="#252241"
+              bg="gray.50"
+              py={1}
+              px={4}
+              fontWeight="bold"
+              textTransform="uppercase"
+              fontSize="2xl"
+              mb={6}
+            >
+              {item[2]}
+            </Box>
+            <Box
+              as="h3"
+              color="blood.50"
+              textTransform="uppercase"
+              fontSize="md"
+              letterSpacing={2}
+              mb={4}
+              fontWeight={600}
+            >
+              {item[0]} - {item[1]}
+            </Box>
+            <Box>{item[4]}</Box>
+          </Flex>
+          <Box w={[0, 150]} minW={[0, 150]} />
         </PseudoBox>
       ))}
     </Box>

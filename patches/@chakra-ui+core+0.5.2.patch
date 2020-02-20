@@ -1,0 +1,13 @@
+diff --git a/node_modules/@chakra-ui/core/dist/es/Box/config.js b/node_modules/@chakra-ui/core/dist/es/Box/config.js
+index f64f3c4..b440f20 100644
+--- a/node_modules/@chakra-ui/core/dist/es/Box/config.js
++++ b/node_modules/@chakra-ui/core/dist/es/Box/config.js
+@@ -176,7 +176,7 @@ export var transformAliasProps = function transformAliasProps(props) {
+   var result = {};
+ 
+   for (var prop in props) {
+-    if (typeof props[prop] === "object") {
++    if (typeof props[prop] === "object" && !Array.isArray(props[prop])) {
+       var _objectSpread2;
+ 
+       result = _objectSpread({}, result, (_objectSpread2 = {}, _objectSpread2[prop] = transformAliasProps(props[prop]), _objectSpread2));
