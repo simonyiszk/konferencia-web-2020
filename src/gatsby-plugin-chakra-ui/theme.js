@@ -1,7 +1,7 @@
 /* eslint-disable no-redeclare */
 import { theme } from '@chakra-ui/core';
 
-const theme = {
+const customTheme = {
   ...theme,
   colors: {
     ...theme.colors,
@@ -12,4 +12,4 @@ const theme = {
   },
 };
 
-export default theme;
+export default customTheme;

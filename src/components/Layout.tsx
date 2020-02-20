@@ -13,6 +13,7 @@ import { Helmet } from 'react-helmet-async';
 import { ParallaxProvider } from 'react-scroll-parallax';
 import Sticky from 'react-sticky-el';
 
+import customTheme from '../gatsby-plugin-chakra-ui/theme';
 import Hero from './Hero';
 import NavBar from './NavBar';
 import { Parallax3DProvider } from './Parallax3D';
@@ -57,7 +58,7 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
           content={`${data.site.siteMetadata.languageCode}_${data.site.siteMetadata.countryCode}`}
         />
       </Helmet>
-
+      {/*
       <Global
         styles={css`
           * {
@@ -65,18 +66,22 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
           }
         `}
       />
+      */}
+      <ThemeProvider theme={customTheme}>
+        <ColorModeProvider>
+          <Dark />
 
-      <Dark />
+          <Parallax3DProvider>
+            <Hero />
 
-      <Parallax3DProvider>
-        <Hero />
+            <NavBar />
 
-        <NavBar />
+            <Box as="main">{children}</Box>
 
-        <Box as="main">{children}</Box>
-
-        <footer>{/* TODO */}</footer>
-      </Parallax3DProvider>
+            <footer>{/* TODO */}</footer>
+          </Parallax3DProvider>
+        </ColorModeProvider>
+      </ThemeProvider>
     </React.StrictMode>
   );
 }

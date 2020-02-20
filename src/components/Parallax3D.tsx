@@ -22,7 +22,14 @@ export function Parallax3DProvider({ children }: LayoutProps): JSX.Element {
       w="100vw"
       overflowX="hidden"
       overflowY="auto"
-      css={{ perspective: '300px' }}
+      css={css`
+        perspective: 300px;
+        -webkit-overflow-scrolling: touch;
+        transform-style: preserve-3d;
+        * {
+          transform-style: preserve-3d;
+        }
+      `}
     >
       {children}
     </Box>
