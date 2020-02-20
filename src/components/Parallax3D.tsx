@@ -24,7 +24,7 @@ export function Parallax3DProvider({ children }: LayoutProps): JSX.Element {
       overflowY="scroll"
       css={css`
         perspective: 300px;
-        -webkit-overflow-scrolling: touch;
+        /*-webkit-overflow-scrolling: touch;*/
         transform-style: preserve-3d;
         * {
           transform-style: preserve-3d;
@@ -97,7 +97,6 @@ export function Parallax3DLayerFore({
       id="LayerFore"
       m={0}
       p={0}
-      position="-webkit-sticky"
       top={0}
       left={0}
       right={0}
@@ -106,7 +105,7 @@ export function Parallax3DLayerFore({
       pointerEvents="auto"
       css={css`
         position: absolute;
-        position: -webkit-sticky;
+        /*position: -webkit-sticky;*/
       `}
       {...props}
     >
@@ -124,8 +123,7 @@ export function Parallax3DLayerBack({
       id="LayerBack"
       m={0}
       p={0}
-      position="-webkit-sticky"
-      top="50vh"
+      top={0}
       left={0}
       right={0}
       bottom={0}
@@ -151,7 +149,6 @@ export function Parallax3DLayerDeep({
       id="LayerDeep"
       m={0}
       p={0}
-      position="-webkit-sticky"
       top={0}
       left={0}
       right={0}
@@ -160,7 +157,7 @@ export function Parallax3DLayerDeep({
       pointerEvents="auto"
       css={css`
         position: absolute;
-        position: -webkit-sticky;
+        /*position: -webkit-sticky;*/
       `}
       {...props}
     >
