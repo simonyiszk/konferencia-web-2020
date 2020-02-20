@@ -90,7 +90,7 @@ export function Parallax3DLayerFore({
       id="LayerFore"
       m={0}
       p={0}
-      position="absolute"
+      position="-webkit-sticky"
       top={0}
       left={0}
       right={0}
@@ -113,7 +113,7 @@ export function Parallax3DLayerBack({
       id="LayerBack"
       m={0}
       p={0}
-      position="absolute"
+      position="-webkit-sticky"
       top={0}
       left={0}
       right={0}
@@ -136,7 +136,7 @@ export function Parallax3DLayerDeep({
       id="LayerDeep"
       m={0}
       p={0}
-      position="absolute"
+      position="-webkit-sticky"
       top={0}
       left={0}
       right={0}
