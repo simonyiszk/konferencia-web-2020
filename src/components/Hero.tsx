@@ -4,7 +4,6 @@ import { Parallax, ParallaxContext } from 'react-scroll-parallax';
 import Sticky from 'react-sticky-el';
 
 import HeroBG from '../assets/star_PNG76860.png';
-import customTheme from '../gatsby-plugin-chakra-ui/theme';
 import {
   Parallax3DGroup,
   Parallax3DLayerBack,

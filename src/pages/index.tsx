@@ -15,6 +15,7 @@ export default function IndexPage(): JSX.Element {
       <Box size="sm" p={16} pl={32}>
         <Image src={ImageSrc} />
       </Box>
+      <Box position="fixed">a</Box>
       <Content />
       <Divider />
     </Layout>

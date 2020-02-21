@@ -7,6 +7,7 @@ const customTheme = {
     ...theme.colors,
     blood: {
       50: '#d21e47',
+      500: '#a61d39',
       900: '#731a22',
     },
   },

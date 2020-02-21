@@ -15,9 +15,11 @@ import {
   PseudoBox,
   useDisclosure,
 } from '@chakra-ui/core';
+import { css } from '@emotion/core';
 import React from 'react';
 
-import Logo from '../assets/Logo.png';
+import Logo from '../assets/logod.png';
+import LogoText from '../assets/logotextfullw.png';
 import { navBarData } from '../data/data';
 
 export default function NavBar(): JSX.Element {
@@ -66,9 +68,18 @@ export default function NavBar(): JSX.Element {
             onClick={onOpen}
             position="absolute"
             right={0}
-            display={['inherit', 'inherit', 'none']}
+            display={['block', 'block', 'none']}
+            cursor="pointer"
+            bg="purple.900"
+            _hover={{ bg: 'purple.900' }}
+            _active={{ bg: 'purple.900' }}
+            css={css`
+              transform-style: flat;
+            `}
           >
-            Open
+            <Box w="45px" h="1px" bg="white" />
+            <Box w="45px" h="1px" my={2} bg="white" />
+            <Box w="45px" h="1px" bg="white" />
           </Button>
           <Drawer
             isOpen={isOpen}
@@ -87,7 +98,7 @@ export default function NavBar(): JSX.Element {
                       <Heading as="h3" size="md" {...props} />
                     )}
                     key={item}
-                    color="blood.50"
+                    color="white"
                     px={4}
                     py={2}
                     _first={{
