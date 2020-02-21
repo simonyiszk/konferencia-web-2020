@@ -3,6 +3,8 @@ import { theme } from '@chakra-ui/core';
 
 const customTheme = {
   ...theme,
+  ...theme.breakpoints,
+  breakpoints: ['23em', '42em', '62em', '80em'],
   colors: {
     ...theme.colors,
     blood: {

@@ -33,20 +33,20 @@ export default function NavBar(): JSX.Element {
       p={0}
       position="absolute"
       bottom={0}
-      minH={['45px', '77px']}
-      maxH={['45px', '77px']}
-      h={['45px', '77px']}
+      minH={['66px', '66px', '78px']}
+      maxH={['66px', '66px', '78px']}
+      h={['66px', '66px', '78px']}
       w="100vw"
       maxW="100%"
       zIndex="sticky"
     >
       <Box
         m="auto"
-        p={4}
+        p={['0.25em', '0.5em', '1em']}
         bg="purple.900"
-        minH={['45px', '77px']}
-        maxH={['45px', '77px']}
-        h={['45px', '77px']}
+        minH={['66px', '66px', '78px']}
+        maxH={['66px', '66px', '78px']}
+        h={['66px', '66px', '78px']}
       >
         <Flex
           m="auto"
@@ -55,8 +55,17 @@ export default function NavBar(): JSX.Element {
           direction="row"
           display={['none', 'none', 'flex']}
         >
-          <Box maxH={45}>
-            <Image src={LogoText} maxH="inherit" />
+          <Box maxH={46}>
+            <Image
+              src={Logo}
+              maxH="inherit"
+              display={['inherit', 'inherit', 'inherit', 'none']}
+            />
+            <Image
+              src={LogoText}
+              maxH="inherit"
+              display={['none', 'none', 'none', 'inherit']}
+            />
           </Box>
           <Flex
             position="fixed"
@@ -67,7 +76,7 @@ export default function NavBar(): JSX.Element {
             {navBarData.map(item => (
               <PseudoBox
                 as={(props): JSX.Element => (
-                  <Heading as="h3" size="md" {...props} />
+                  <Heading as="h3" fontSize="lg" {...props} />
                 )}
                 key={item}
                 px={4}
@@ -81,15 +90,21 @@ export default function NavBar(): JSX.Element {
         </Flex>
         <Flex
           mx="auto"
+          my="auto"
           align="center"
-          justify="center"
+          justify="space-evenly"
+          position="absolute"
+          p={['0.25em', '0.5em', '1em']}
+          top={0}
+          bottom={0}
+          left={0}
+          right={0}
           display={['flex', 'flex', 'none']}
         >
           <Box
-            minH={['13px', '45px']}
-            maxH={['13px', '45px']}
-            h={['13px', '45px']}
-            mr={4}
+            minH={['32px', '32px']}
+            maxH={['32px', '32px']}
+            h={['32px', '32px']}
           >
             <Image src={Logo} maxH="inherit" />
           </Box>
@@ -99,7 +114,8 @@ export default function NavBar(): JSX.Element {
                 <Heading as="h3" fontSize={['0.66em', '0.875em']} {...props} />
               )}
               key={item}
-              px={2}
+              px={['0.25em', '0.5em']}
+              my="auto"
               _first={{ paddingLeft: 0 }}
               _last={{ paddingRight: 0 }}
             >
