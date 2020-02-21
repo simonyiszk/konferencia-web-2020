@@ -31,22 +31,38 @@ export default function NavBar(): JSX.Element {
       as="nav"
       m={0}
       p={0}
-      position="sticky"
-      top={0}
+      position="absolute"
+      bottom={0}
+      minH={['45px', '77px']}
+      maxH={['45px', '77px']}
+      h={['45px', '77px']}
       w="100vw"
       maxW="100%"
       zIndex="sticky"
     >
-      <Box m="auto" p={4} bg="purple.900">
-        <Flex m="auto" align="center" direction="row">
+      <Box
+        m="auto"
+        p={4}
+        bg="purple.900"
+        minH={['45px', '77px']}
+        maxH={['45px', '77px']}
+        h={['45px', '77px']}
+      >
+        <Flex
+          m="auto"
+          mx={['auto', 'auto', '4em', '8em', '16em']}
+          align="center"
+          direction="row"
+          display={['none', 'none', 'flex']}
+        >
           <Box maxH={45}>
-            <Image src={Logo} maxH="inherit" />
+            <Image src={LogoText} maxH="inherit" />
           </Box>
           <Flex
-            position="absolute"
+            position="fixed"
             right={0}
+            mr={['auto', 'auto', '4em', '8em', '16em']}
             direction="row"
-            display={['none', 'none', 'inherit']}
           >
             {navBarData.map(item => (
               <PseudoBox
@@ -62,55 +78,34 @@ export default function NavBar(): JSX.Element {
               </PseudoBox>
             ))}
           </Flex>
-          <Button
-            ref={btnRef}
-            variantColor="teal"
-            onClick={onOpen}
-            position="absolute"
-            right={0}
-            display={['block', 'block', 'none']}
-            cursor="pointer"
-            bg="purple.900"
-            _hover={{ bg: 'purple.900' }}
-            _active={{ bg: 'purple.900' }}
-            css={css`
-              transform-style: flat;
-            `}
+        </Flex>
+        <Flex
+          mx="auto"
+          align="center"
+          justify="center"
+          display={['flex', 'flex', 'none']}
+        >
+          <Box
+            minH={['13px', '45px']}
+            maxH={['13px', '45px']}
+            h={['13px', '45px']}
+            mr={4}
           >
-            <Box w="45px" h="1px" bg="white" />
-            <Box w="45px" h="1px" my={2} bg="white" />
-            <Box w="45px" h="1px" bg="white" />
-          </Button>
-          <Drawer
-            isOpen={isOpen}
-            placement="right"
-            onClose={onClose}
-            finalFocusRef={btnRef}
-            position="absolute"
-          >
-            <DrawerOverlay />
-            <DrawerContent>
-              <DrawerCloseButton />
-              <Flex direction="column" display="inherit">
-                {navBarData.map(item => (
-                  <PseudoBox
-                    as={(props): JSX.Element => (
-                      <Heading as="h3" size="md" {...props} />
-                    )}
-                    key={item}
-                    color="white"
-                    px={4}
-                    py={2}
-                    _first={{
-                      marginTop: 8,
-                    }}
-                  >
-                    {item}
-                  </PseudoBox>
-                ))}
-              </Flex>
-            </DrawerContent>
-          </Drawer>
+            <Image src={Logo} maxH="inherit" />
+          </Box>
+          {navBarData.map(item => (
+            <PseudoBox
+              as={(props): JSX.Element => (
+                <Heading as="h3" fontSize={['0.66em', '0.875em']} {...props} />
+              )}
+              key={item}
+              px={2}
+              _first={{ paddingLeft: 0 }}
+              _last={{ paddingRight: 0 }}
+            >
+              {item}
+            </PseudoBox>
+          ))}
         </Flex>
       </Box>
     </Box>

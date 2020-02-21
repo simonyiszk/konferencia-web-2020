@@ -12,7 +12,10 @@ interface GroupProps {
   rotate?: boolean;
 }
 
-export function Parallax3DProvider({ children }: LayoutProps): JSX.Element {
+export function Parallax3DProvider({
+  children,
+  ...props
+}: LayoutProps): JSX.Element {
   return (
     <Box
       id="Parallax3DProvider"
@@ -29,6 +32,7 @@ export function Parallax3DProvider({ children }: LayoutProps): JSX.Element {
           transform-style: preserve-3d;
         }
       `}
+      {...props}
     >
       {children}
     </Box>
