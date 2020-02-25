@@ -83,14 +83,12 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
               smoothScrolling: false,
               forceHeight: false,
             }}
-            disableOnMobile={false}
-            /*
+            // disableOnMobile={false}
             h={[
               'calc(var(--vh, 1vh) * 100)',
               'calc(var(--vh, 1vh) * 100)',
               '100vh',
             ]}
-            */
             w="100vw"
           >
             <Hero2 />
