@@ -17,12 +17,30 @@ import {
 } from './Parallax3D';
 
 export default function Hero(): JSX.Element {
+  // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+  let vh = window.innerHeight * 0.01;
+  // Then we set the value in the --vh custom property to the root of the document
+  document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+  // We listen to the resize event
+  window.addEventListener('resize', () => {
+    // We execute the same script as before
+    vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+  });
+
   return (
     <Box
       as="header"
       m={0}
       p={0}
-      h={['93vh', '93vh', 'calc(100vh - 78px)']}
+      h={[
+        'calc(calc(var(--vh, 1vh) * 100) - 66px)',
+        'calc(calc(var(--vh, 1vh) * 100) - 66px)',
+        'calc(calc(var(--vh, 1vh) * 100) - 78px)',
+      ]}
+      // eslint-disable-next-line react/jsx-no-duplicate-props
+      // height={['93vh', '93vh', 'calc(100vh - 78px)']}
       /* css={css`
         height: calc(100vh - 78px);
       `} */
