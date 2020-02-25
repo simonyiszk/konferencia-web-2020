@@ -21,16 +21,18 @@ export function Parallax3DProvider({
       id="Parallax3DProvider"
       m={0}
       p={0}
-      h="100vh"
+      h="92vh"
       w="100vw"
       overflowX="hidden"
       overflowY="scroll"
       css={css`
         -webkit-overflow-scrolling: touch;
+        /*
         transform-style: preserve-3d;
         * {
           transform-style: preserve-3d;
         }
+        */
       `}
       {...props}
     >
@@ -46,7 +48,7 @@ export function Parallax3DGroup({
   ...props
 }: GroupProps): JSX.Element {
   const normalStyle = css`
-    transform-style: preserve-3d;
+    /*transform-style: preserve-3d;*/
     perspective: 300px;
   `;
 

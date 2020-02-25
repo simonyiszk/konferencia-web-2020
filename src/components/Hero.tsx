@@ -17,52 +17,45 @@ import {
 
 export default function Hero(): JSX.Element {
   return (
-    <Box as="header" m={0} p={0} h="calc(100% - 78px)">
+    <Box as="header" m={0} p={0} h="calc(100vh - 78px)">
       <Parallax3DGroup>
-        <Parallax3DLayerDeep>
+        <Parallax3DLayerFore zIndex="40">
           <Box
             css={{ textAlign: 'center' }}
             position="absolute"
             left="50%"
             top="50%"
             transform="translate(-50%, -50%)"
+            zIndex="40"
           >
-            <Image
-              src={HeroLayer6}
-              w="130vw"
-              maxW="unset"
-              transform="translate(50px, 50px)"
-            />
-          </Box>
-        </Parallax3DLayerDeep>
-        <Parallax3DLayerBack>
-          <Box
-            css={{ textAlign: 'center' }}
-            position="absolute"
-            left="50%"
-            top="50%"
-            transform="translate(-50%, -50%)"
-          >
-            <Image src={HeroLayer4} w="100vw" maxW="unset" />
-          </Box>
-        </Parallax3DLayerBack>
-
-        <Parallax3DLayerFore>
-          <Box
-            css={{ textAlign: 'center' }}
-            position="absolute"
-            left="50%"
-            top="50%"
-            transform="translate(-50%, -50%)"
-          >
-            <Image
-              src={HeroLayer2}
-              w="130vw"
-              maxW="unset"
-              transform="translate(-50px, -50px)"
-            />
+            <Image src={HeroLayer2} w="130vw" maxW="unset" zIndex="40" />
           </Box>
         </Parallax3DLayerFore>
+
+        <Parallax3DLayerBack zIndex="30">
+          <Box
+            css={{ textAlign: 'center' }}
+            position="absolute"
+            left="50%"
+            top="50%"
+            transform="translate(-50%, -50%)"
+            zIndex="30"
+          >
+            <Image src={HeroLayer4} w="100vw" maxW="unset" zIndex="30" />
+          </Box>
+        </Parallax3DLayerBack>
+        <Parallax3DLayerDeep zIndex="20">
+          <Box
+            css={{ textAlign: 'center' }}
+            position="absolute"
+            left="50%"
+            top="50%"
+            transform="translate(-50%, -50%)"
+            zIndex="20"
+          >
+            <Image src={HeroLayer6} w="130vw" maxW="unset" zIndex="20" />
+          </Box>
+        </Parallax3DLayerDeep>
       </Parallax3DGroup>
     </Box>
   );
