@@ -10,11 +10,11 @@ import { css, Global, jsx } from '@emotion/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { ParallaxProvider } from 'react-scroll-parallax';
+import { Parallax, ParallaxProvider } from 'react-skrollr';
 import Sticky from 'react-sticky-el';
 
 import customTheme from '../gatsby-plugin-chakra-ui/theme';
-import Hero from './Hero';
+import { Hero2 } from './Hero';
 import NavBar from './NavBar';
 import { Parallax3DProvider } from './Parallax3D';
 
@@ -59,7 +59,7 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
   }
 
   return (
-    <React.StrictMode>
+    <React.Fragment>
       <Helmet
         titleTemplate={`%s - ${data.site.siteMetadata.title}`}
         defaultTitle={data.site.siteMetadata.title}
@@ -72,30 +72,28 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
           content={`${data.site.siteMetadata.languageCode}_${data.site.siteMetadata.countryCode}`}
         />
       </Helmet>
-      {/*
-      <Global
-        styles={css`
-          * {
-            transform-style: preserve-3d;
-          }
-        `}
-      />
-      */}
+
       <ThemeProvider theme={customTheme}>
         <ColorModeProvider>
           <Dark />
 
-          <Parallax3DProvider>
-            <Hero />
+          <ParallaxProvider
+            init={{
+              smoothScrollingDuration: 1,
+              smoothScrolling: false,
+              forceHeight: false,
+            }}
+          >
+            <Hero2 />
 
             <NavBar />
 
             <Box as="main">{children}</Box>
 
             <footer>{/* TODO */}</footer>
-          </Parallax3DProvider>
+          </ParallaxProvider>
         </ColorModeProvider>
       </ThemeProvider>
-    </React.StrictMode>
+    </React.Fragment>
   );
 }

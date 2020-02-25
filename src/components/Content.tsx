@@ -31,12 +31,11 @@ const lists = stackedPlaceholderData.map(function content(item, index) {
       _odd={{
         marginLeft: [4, 12, 24, 64],
         marginRight: 0,
-        borderRadius: '42px 0px 0px 42px',
       }}
       _even={{
         marginLeft: 0,
         marginRight: [4, 12, 24, 64],
-        borderRadius: '0px 42px 42px 0px',
+
         flexDirection: ['column', 'column', 'row-reverse'],
       }}
     >
@@ -80,7 +79,7 @@ const lists = stackedPlaceholderData.map(function content(item, index) {
         </Box>
         <Box>{item[4]}</Box>
       </Flex>
-      <Box w={[0, 150]} minW={[0, 150]} />
+      <Box w={[0, 0, 60, 150]} minW={[0, 0, 60, 150]} />
     </PseudoBox>
   );
 });

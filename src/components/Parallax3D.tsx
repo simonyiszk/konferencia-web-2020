@@ -1,5 +1,7 @@
+/** @jsx jsx */
+
 import { Box } from '@chakra-ui/core';
-import { css } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 import React from 'react';
 
 interface LayoutProps {
@@ -21,19 +23,29 @@ export function Parallax3DProvider({
       id="Parallax3DProvider"
       m={0}
       p={0}
+      // h="93vh"
       h={['calc(var(--vh, 1vh) * 100)', 'calc(var(--vh, 1vh) * 100)', '100vh']}
       w="100vw"
       overflowX="hidden"
       overflowY="scroll"
       css={css`
         -webkit-overflow-scrolling: touch;
-        /*
+
         transform-style: preserve-3d;
+
         * {
           transform-style: preserve-3d;
         }
-        */
       `}
+      /*
+      css={{
+        height: [
+          'calc(var(--vh, 1vh) * 100)',
+          'calc(var(--vh, 1vh) * 100)',
+          '100vh',
+        ],
+      }}
+      */
       {...props}
     >
       {children}
