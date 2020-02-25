@@ -9,6 +9,7 @@ import HeroLayer1 from '../assets/top-layer-1.png';
 import HeroLayer2 from '../assets/top-layer-2.png';
 import HeroLayer4 from '../assets/top-layer-4.png';
 import HeroLayer6 from '../assets/top-layer-6.png';
+import { ParallaxHeroImage } from './Components';
 import {
   Parallax3DGroup,
   Parallax3DLayerBack,
@@ -93,30 +94,29 @@ export function Hero2(): JSX.Element {
         height: calc(100vh - 78px);
       `} */
     >
-      <Parallax
-        data={{
-          'data-0': 'transform:translateY(550px);',
-          'data-1100': 'transform:translateY(0px);',
-        }}
-      >
-        <Image src={HeroLayer6} w="100vw" maxW="unset" zIndex="40" />
-      </Parallax>
-      <Parallax
-        data={{
-          'data-0': 'transform:translateY(550px);',
-          'data-1100': 'transform:translateY(-400px);',
-        }}
-      >
-        <Image src={HeroLayer4} w="100vw" maxW="unset" zIndex="40" />
-      </Parallax>
-      <Parallax
-        data={{
-          'data-0': 'transform:translateY(550px);',
-          'data-1100': 'transform:translateY(-800px);',
-        }}
-      >
-        <Image src={HeroLayer2} w="100vw" maxW="unset" zIndex="40" />
-      </Parallax>
+      <ParallaxHeroImage
+        background={HeroLayer6}
+        backgroundSize="1920px 214px"
+        height="214px"
+        top="350px"
+        speed="300px"
+      />
+
+      <ParallaxHeroImage
+        background={HeroLayer4}
+        backgroundSize="1936px 448px"
+        height="448px"
+        top="450px"
+        speed="0px"
+      />
+
+      <ParallaxHeroImage
+        background={HeroLayer2}
+        backgroundSize="1920px 280px"
+        height="280px"
+        top="650px"
+        speed="-300px"
+      />
     </Box>
   );
 }

@@ -70,7 +70,7 @@ export default function NavBar(): JSX.Element {
           <Flex
             position="absolute"
             right={0}
-            /* mr={['auto', 'auto', '4em', '8em', '16em']} */
+            mr={['auto', 'auto', '4em', '8em', '16em']}
             direction="row"
           >
             {navBarData.map(item => (
