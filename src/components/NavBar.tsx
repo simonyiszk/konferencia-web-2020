@@ -68,7 +68,7 @@ export default function NavBar(): JSX.Element {
             />
           </Box>
           <Flex
-            position="fixed"
+            position="absolute"
             right={0}
             /* mr={['auto', 'auto', '4em', '8em', '16em']} */
             direction="row"

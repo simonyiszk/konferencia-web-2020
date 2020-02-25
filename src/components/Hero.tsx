@@ -1,4 +1,5 @@
 import { Box, Image } from '@chakra-ui/core';
+import { css } from '@emotion/core';
 import React from 'react';
 import { Parallax, ParallaxContext } from 'react-scroll-parallax';
 import Sticky from 'react-sticky-el';
@@ -17,7 +18,15 @@ import {
 
 export default function Hero(): JSX.Element {
   return (
-    <Box as="header" m={0} p={0} h="calc(100vh - 78px)">
+    <Box
+      as="header"
+      m={0}
+      p={0}
+      h={['93vh', '93vh', 'calc(100vh - 78px)']}
+      /* css={css`
+        height: calc(100vh - 78px);
+      `} */
+    >
       <Parallax3DGroup>
         <Parallax3DLayerFore zIndex="40">
           <Box
