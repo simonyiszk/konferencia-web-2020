@@ -9,13 +9,6 @@ import Layout from '../components/Layout';
 export default function IndexPage(): JSX.Element {
   return (
     <Layout>
-      <Box p={8} pl={32} style={{ color: `purple`, fontSize: `72px` }}>
-        Hello Gatsby!
-      </Box>
-      <Box size="sm" p={16} pl={32}>
-        <Image src={ImageSrc} />
-      </Box>
-      <Box position="fixed">a</Box>
       <Content />
       <Divider />
     </Layout>
