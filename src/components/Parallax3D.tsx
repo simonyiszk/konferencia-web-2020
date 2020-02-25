@@ -21,7 +21,7 @@ export function Parallax3DProvider({
       id="Parallax3DProvider"
       m={0}
       p={0}
-      h="100vh"
+      h={['calc(var(--vh, 1vh) * 100)', 'calc(var(--vh, 1vh) * 100)', '100vh']}
       w="100vw"
       overflowX="hidden"
       overflowY="scroll"
