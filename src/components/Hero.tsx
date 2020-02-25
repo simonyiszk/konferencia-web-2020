@@ -13,7 +13,7 @@ import {
 
 export default function Hero(): JSX.Element {
   return (
-    <Box as="header" m={0} p={0} h="calc(100vh - 77px)">
+    <Box as="header" m={0} p={0} h="calc(100vh - 78px)">
       <Parallax3DGroup>
         <Parallax3DLayerBack>
           <Box

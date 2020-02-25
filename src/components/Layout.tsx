@@ -70,9 +70,11 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
       <ThemeProvider theme={customTheme}>
         <ColorModeProvider>
           <Dark />
-          <NavBar />
-          <Parallax3DProvider h={['calc(100vh - 78px)', 'calc(100vh - 66px)']}>
+
+          <Parallax3DProvider>
             <Hero />
+
+            <NavBar />
 
             <Box as="main">{children}</Box>
 

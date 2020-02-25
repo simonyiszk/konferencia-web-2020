@@ -31,8 +31,8 @@ export default function NavBar(): JSX.Element {
       as="nav"
       m={0}
       p={0}
-      position="absolute"
-      bottom={0}
+      position="sticky"
+      top={0}
       minH={['66px', '66px', '78px']}
       maxH={['66px', '66px', '78px']}
       h={['66px', '66px', '78px']}
@@ -70,7 +70,7 @@ export default function NavBar(): JSX.Element {
           <Flex
             position="fixed"
             right={0}
-            mr={['auto', 'auto', '4em', '8em', '16em']}
+            /* mr={['auto', 'auto', '4em', '8em', '16em']} */
             direction="row"
           >
             {navBarData.map(item => (
