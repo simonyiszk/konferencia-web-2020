@@ -46,7 +46,7 @@ export default function(): JSX.Element {
         <Flex direction="column" maxW="280px" alignItems="center">
           <Image src={img1} maxW="240px" maxH="240px" m="auto" />
           <Text color="black" fontSize="2xl" pt={6}>
-            Mike Wazovsky
+            Zih Botond
           </Text>
           <Text
             color="secondary"
@@ -55,7 +55,7 @@ export default function(): JSX.Element {
             fontWeight="bold"
             pb={2}
           >
-            sajtófelelős
+            főrendező
           </Text>
           <Text
             as="a"
@@ -63,13 +63,13 @@ export default function(): JSX.Element {
             color="blood.50"
             fontSize="md"
           >
-            mike.wazowsky@simonyi.bme.hu
+            zih.botond@simonyi.bme.hu
           </Text>
         </Flex>
         <Flex direction="column" maxW="280px" alignItems="center">
           <Image src={img1} maxW="240px" maxH="240px" m="auto" />
           <Text color="black" fontSize="2xl" pt={6}>
-            Mike Wazovsky
+            Frey Balázs
           </Text>
           <Text
             color="secondary"
@@ -78,7 +78,7 @@ export default function(): JSX.Element {
             fontWeight="bold"
             pb={2}
           >
-            sajtófelelős
+            szakkollégiumunk elnöke
           </Text>
           <Text
             as="a"
@@ -86,7 +86,7 @@ export default function(): JSX.Element {
             color="blood.50"
             fontSize="md"
           >
-            mike.wazowsky@simonyi.bme.hu
+            frey.balazs@simonyi.bme.hu
           </Text>
         </Flex>
       </Grid>
