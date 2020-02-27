@@ -1,4 +1,3 @@
-/* eslint-disable no-redeclare */
 import { theme } from '@chakra-ui/core';
 
 const customTheme = {

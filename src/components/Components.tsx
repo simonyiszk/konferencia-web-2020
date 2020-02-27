@@ -2,7 +2,6 @@
 
 import { Box } from '@chakra-ui/core';
 import { css, jsx } from '@emotion/core';
-import React from 'react';
 import { Parallax } from 'react-skrollr';
 
 interface PProps {

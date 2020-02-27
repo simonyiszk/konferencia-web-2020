@@ -1,8 +1,7 @@
 /** @jsx jsx */
 
 import { Box, Text } from '@chakra-ui/core';
-import { css, jsx } from '@emotion/core';
-import React from 'react';
+import { jsx } from '@emotion/core';
 
 export default function(): JSX.Element {
   return (

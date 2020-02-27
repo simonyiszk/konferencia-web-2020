@@ -1,3 +1,5 @@
+/** @jsx jsx */
+
 import {
   Box,
   Flex,
@@ -7,9 +9,7 @@ import {
   Text,
   theme,
 } from '@chakra-ui/core';
-import { css, Interpolation } from '@emotion/core';
-import React from 'react';
-import { findRenderedComponentWithType } from 'react-dom/test-utils';
+import { jsx } from '@emotion/core';
 
 import favicon from '../assets/favicon.png';
 import { placeholderData, stackedPlaceholderData } from '../data/data';
@@ -85,8 +85,6 @@ const lists = stackedPlaceholderData.map(function content(item, index) {
 });
 
 export default function Content(): JSX.Element {
-  const bg = `${theme.colors.purple[900]}77`;
-
   return (
     <Box mt={8}>
       <Text color="blood.50" fontSize="4xl" textAlign="center" mb={8}>

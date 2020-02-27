@@ -1,8 +1,7 @@
 /** @jsx jsx */
 
 import { Box, Flex, Grid, Image, Text } from '@chakra-ui/core';
-import { css, jsx } from '@emotion/core';
-import React from 'react';
+import { jsx } from '@emotion/core';
 
 import img1 from '../assets/favicon.png';
 
