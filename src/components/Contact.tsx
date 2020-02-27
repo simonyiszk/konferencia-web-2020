@@ -1,32 +1,38 @@
 /** @jsx jsx */
 
-import { Box, Flex, Grid, Image, Text } from '@chakra-ui/core';
+import { Box, Flex, Image, Text } from '@chakra-ui/core';
 import { jsx } from '@emotion/core';
 
 import img1 from '../assets/favicon.png';
 
 export default function(): JSX.Element {
   return (
-    <Box bg="white" py={[8, 8, 16]} px={[4, 4, 16, 32, 64]} mt={16}>
+    <Box bg="white" py={[8, 8, 16]} px={4} mt={16}>
       <Text color="blood.50" fontSize="4xl" textAlign="center" mb={8}>
         Kapcsolat
       </Text>
-      <Grid
-        templateColumns="repeat(auto-fill, 280px)"
-        gap={8}
+      <Flex
+        direction={['column', 'column', 'column', 'row']}
+        px={[null, null, null, 24, 64]}
         m="auto"
-        justifyContent="center"
-        justifyItems="center"
+        justifyContent="space-evenly"
+        alignItems="center"
         minW="280px"
       >
-        <Flex direction="column" maxW="280px" alignItems="center">
+        <Flex
+          direction="column"
+          alignItems="center"
+          mb={8}
+          maxW="280px"
+          minW="280px"
+        >
           <Image src={img1} maxW="240px" maxH="240px" m="auto" />
           <Text color="black" fontSize="2xl" pt={6}>
             Mike Wazovsky
           </Text>
           <Text
             color="secondary"
-            fontSize="lg"
+            fontSize="md"
             textTransform="uppercase"
             fontWeight="bold"
             pb={2}
@@ -42,14 +48,20 @@ export default function(): JSX.Element {
             mike.wazowsky@simonyi.bme.hu
           </Text>
         </Flex>
-        <Flex direction="column" maxW="280px" alignItems="center">
+        <Flex
+          direction="column"
+          alignItems="center"
+          mb={8}
+          maxW="280px"
+          minW="280px"
+        >
           <Image src={img1} maxW="240px" maxH="240px" m="auto" />
           <Text color="black" fontSize="2xl" pt={6}>
             Zih Botond
           </Text>
           <Text
             color="secondary"
-            fontSize="lg"
+            fontSize="md"
             textTransform="uppercase"
             fontWeight="bold"
             pb={2}
@@ -65,14 +77,20 @@ export default function(): JSX.Element {
             zih.botond@simonyi.bme.hu
           </Text>
         </Flex>
-        <Flex direction="column" maxW="280px" alignItems="center">
+        <Flex
+          direction="column"
+          alignItems="center"
+          mb={8}
+          maxW="280px"
+          minW="280px"
+        >
           <Image src={img1} maxW="240px" maxH="240px" m="auto" />
           <Text color="black" fontSize="2xl" pt={6}>
             Frey Balázs
           </Text>
           <Text
             color="secondary"
-            fontSize="lg"
+            fontSize="md"
             textTransform="uppercase"
             fontWeight="bold"
             pb={2}
@@ -88,7 +106,7 @@ export default function(): JSX.Element {
             frey.balazs@simonyi.bme.hu
           </Text>
         </Flex>
-      </Grid>
+      </Flex>
     </Box>
   );
 }
