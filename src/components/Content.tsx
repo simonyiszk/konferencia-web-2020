@@ -1,10 +1,10 @@
 import {
   Box,
   Flex,
-  Grid,
   Heading,
   Image,
   PseudoBox,
+  Text,
   theme,
 } from '@chakra-ui/core';
 import { css, Interpolation } from '@emotion/core';
@@ -87,5 +87,12 @@ const lists = stackedPlaceholderData.map(function content(item, index) {
 export default function Content(): JSX.Element {
   const bg = `${theme.colors.purple[900]}77`;
 
-  return <Box>{lists}</Box>;
+  return (
+    <Box mt={8}>
+      <Text color="blood.50" fontSize="4xl" textAlign="center" mb={8}>
+        Előadások
+      </Text>
+      {lists}
+    </Box>
+  );
 }
