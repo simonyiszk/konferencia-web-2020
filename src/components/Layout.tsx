@@ -73,6 +73,14 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
         />
       </Helmet>
 
+      <Global
+        styles={css`
+          * {
+            font-family: Barlow !important;
+          }
+        `}
+      />
+
       <ThemeProvider theme={customTheme}>
         <ColorModeProvider>
           <Dark />

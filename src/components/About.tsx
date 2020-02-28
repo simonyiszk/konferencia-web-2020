@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { Box, Text } from '@chakra-ui/core';
+import { Box, Heading, Text } from '@chakra-ui/core';
 import { jsx } from '@emotion/core';
 
 export default function(): JSX.Element {
@@ -8,6 +8,7 @@ export default function(): JSX.Element {
     <Box bg="#085573" py={[8, 8, 16]} px={[4, 4, 16, 32, 64]}>
       <Text
         color="white"
+        fontFamily="Barlow"
         fontSize="4xl"
         textAlign="center"
         maxW="777px"

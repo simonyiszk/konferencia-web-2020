@@ -12,6 +12,7 @@ const customTheme = {
       900: '#731a22',
     },
     secondary: '#085573',
+    tertiary: '#F47E25',
   },
 };
 

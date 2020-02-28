@@ -9,7 +9,7 @@ import {
   Text,
   theme,
 } from '@chakra-ui/core';
-import { jsx } from '@emotion/core';
+import { css, jsx } from '@emotion/core';
 
 import favicon from '../assets/favicon.png';
 import { placeholderData, stackedPlaceholderData } from '../data/data';
@@ -31,12 +31,18 @@ const lists = stackedPlaceholderData.map(function content(item, index) {
       _odd={{
         marginLeft: [4, 12, 24, 64],
         marginRight: 0,
+        bg: 'secondary',
       }}
       _even={{
         marginLeft: 0,
         marginRight: [4, 12, 24, 64],
-
+        bg: 'tertiary',
         flexDirection: ['column', 'column', 'row-reverse'],
+        css: css`
+          * {
+            align-items: flex-end !important;
+          }
+        `,
       }}
     >
       <Flex direction="column" align="center" m={4}>
@@ -87,9 +93,15 @@ const lists = stackedPlaceholderData.map(function content(item, index) {
 export default function Content(): JSX.Element {
   return (
     <Box mt={8}>
-      <Text color="blood.50" fontSize="4xl" textAlign="center" mb={8}>
+      <Heading
+        as="h1"
+        color="blood.50"
+        fontSize="4xl"
+        textAlign="center"
+        mb={8}
+      >
         Előadások
-      </Text>
+      </Heading>
       {lists}
     </Box>
   );

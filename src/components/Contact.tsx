@@ -1,6 +1,6 @@
 /** @jsx jsx */
 
-import { Box, Flex, Image, Text } from '@chakra-ui/core';
+import { Box, Flex, Heading, Image, Text } from '@chakra-ui/core';
 import { jsx } from '@emotion/core';
 
 import img1 from '../assets/favicon.png';
@@ -8,9 +8,15 @@ import img1 from '../assets/favicon.png';
 export default function(): JSX.Element {
   return (
     <Box bg="white" py={[8, 8, 16]} px={4} mt={16}>
-      <Text color="blood.50" fontSize="4xl" textAlign="center" mb={8}>
+      <Heading
+        as="h1"
+        color="blood.50"
+        fontSize="4xl"
+        textAlign="center"
+        mb={8}
+      >
         Kapcsolat
-      </Text>
+      </Heading>
       <Flex
         direction={['column', 'column', 'column', 'row']}
         px={[null, null, null, 24, 64]}

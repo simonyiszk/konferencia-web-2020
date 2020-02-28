@@ -18,6 +18,11 @@ module.exports = {
         theme_color: '#663399',
         display: 'minimal-ui',
         icon: 'src/assets/favicon.png',
+        fonts: {
+          family: `Barlow`,
+          subsets: [`latin`],
+          variants: [`200`, `400`, `700`],
+        },
       },
     },
     'gatsby-plugin-react-helmet-async',
