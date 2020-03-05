@@ -7,6 +7,7 @@ import About from '../components/About';
 import Contact from '../components/Contact';
 import Content from '../components/Content';
 import Layout from '../components/Layout';
+import Location from '../components/Location';
 import Registration from '../components/Registration';
 
 export default function IndexPage(): JSX.Element {
@@ -14,6 +15,7 @@ export default function IndexPage(): JSX.Element {
     <Layout>
       <About />
       <Registration />
+      <Location />
       <Content />
       <Contact />
     </Layout>

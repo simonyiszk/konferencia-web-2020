@@ -42,7 +42,8 @@ export default function NavBar(): JSX.Element {
     >
       <Box
         m="auto"
-        p={['0.25em', '0.5em', '1em']}
+        py={['0.25em', '0.5em', '1em']}
+        px={['0.25em', '0.5em', 0]}
         bg="purple.900"
         minH={['66px', '66px', '78px']}
         maxH={['66px', '66px', '78px']}
