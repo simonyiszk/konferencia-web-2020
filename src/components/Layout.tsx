@@ -10,11 +10,11 @@ import { css, Global, jsx } from '@emotion/core';
 import { graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
 import { Helmet } from 'react-helmet-async';
-import { ParallaxProvider } from 'react-scroll-parallax';
+import { Parallax, ParallaxProvider } from 'react-skrollr';
 import Sticky from 'react-sticky-el';
 
 import customTheme from '../gatsby-plugin-chakra-ui/theme';
-import Hero from './Hero';
+import { Hero2 } from './Hero';
 import NavBar from './NavBar';
 import { Parallax3DProvider } from './Parallax3D';
 
@@ -44,8 +44,22 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
     return null;
   }
 
+  if (typeof window !== 'undefined') {
+    // First we get the viewport height and we multiple it by 1% to get a value for a vh unit
+    let vh = window.innerHeight * 0.01;
+    // Then we set the value in the --vh custom property to the root of the document
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+
+    // We listen to the resize event
+    window.addEventListener('resize', () => {
+      // We execute the same script as before
+      vh = window.innerHeight * 0.01;
+      document.documentElement.style.setProperty('--vh', `${vh}px`);
+    });
+  }
+
   return (
-    <React.StrictMode>
+    <React.Fragment>
       <Helmet
         titleTemplate={`%s - ${data.site.siteMetadata.title}`}
         defaultTitle={data.site.siteMetadata.title}
@@ -58,30 +72,43 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
           content={`${data.site.siteMetadata.languageCode}_${data.site.siteMetadata.countryCode}`}
         />
       </Helmet>
-      {/*
+
       <Global
         styles={css`
           * {
-            transform-style: preserve-3d;
+            font-family: Barlow !important;
           }
         `}
       />
-      */}
+
       <ThemeProvider theme={customTheme}>
         <ColorModeProvider>
           <Dark />
 
-          <Parallax3DProvider>
-            <Hero />
+          <ParallaxProvider
+            init={{
+              smoothScrollingDuration: 1,
+              smoothScrolling: false,
+              forceHeight: false,
+            }}
+            // disableOnMobile={false}
+            h={[
+              'calc(var(--vh, 1vh) * 100)',
+              'calc(var(--vh, 1vh) * 100)',
+              '100vh',
+            ]}
+            w="100vw"
+          >
+            <Hero2 />
 
             <NavBar />
 
             <Box as="main">{children}</Box>
 
             <footer>{/* TODO */}</footer>
-          </Parallax3DProvider>
+          </ParallaxProvider>
         </ColorModeProvider>
       </ThemeProvider>
-    </React.StrictMode>
+    </React.Fragment>
   );
 }

@@ -15,9 +15,11 @@ import {
   PseudoBox,
   useDisclosure,
 } from '@chakra-ui/core';
+import { css } from '@emotion/core';
 import React from 'react';
 
-import Logo from '../assets/Logo.png';
+import Logo from '../assets/logod.png';
+import LogoText from '../assets/logotextfullw.png';
 import { navBarData } from '../data/data';
 
 export default function NavBar(): JSX.Element {
@@ -31,25 +33,51 @@ export default function NavBar(): JSX.Element {
       p={0}
       position="sticky"
       top={0}
+      minH={['66px', '66px', '78px']}
+      maxH={['66px', '66px', '78px']}
+      h={['66px', '66px', '78px']}
       w="100vw"
       maxW="100%"
       zIndex="sticky"
     >
-      <Box m="auto" p={4} bg="purple.900">
-        <Flex m="auto" align="center" direction="row">
-          <Box maxH={45}>
-            <Image src={Logo} maxH="inherit" />
+      <Box
+        m="auto"
+        py={['0.25em', '0.5em', '1em']}
+        px={['0.25em', '0.5em', 0]}
+        bg="purple.900"
+        minH={['66px', '66px', '78px']}
+        maxH={['66px', '66px', '78px']}
+        h={['66px', '66px', '78px']}
+      >
+        <Flex
+          m="auto"
+          mx={['auto', 'auto', '4em', '8em', '16em']}
+          align="center"
+          direction="row"
+          display={['none', 'none', 'flex']}
+        >
+          <Box maxH={46}>
+            <Image
+              src={Logo}
+              maxH="inherit"
+              display={['inherit', 'inherit', 'inherit', 'none']}
+            />
+            <Image
+              src={LogoText}
+              maxH="inherit"
+              display={['none', 'none', 'none', 'inherit']}
+            />
           </Box>
           <Flex
             position="absolute"
             right={0}
+            mr={['auto', 'auto', '4em', '8em', '16em']}
             direction="row"
-            display={['none', 'none', 'inherit']}
           >
             {navBarData.map(item => (
               <PseudoBox
                 as={(props): JSX.Element => (
-                  <Heading as="h3" size="md" {...props} />
+                  <Heading as="h3" fontSize="lg" {...props} />
                 )}
                 key={item}
                 px={4}
@@ -60,46 +88,41 @@ export default function NavBar(): JSX.Element {
               </PseudoBox>
             ))}
           </Flex>
-          <Button
-            ref={btnRef}
-            variantColor="teal"
-            onClick={onOpen}
-            position="absolute"
-            right={0}
-            display={['inherit', 'inherit', 'none']}
+        </Flex>
+        <Flex
+          mx="auto"
+          my="auto"
+          align="center"
+          justify="space-evenly"
+          position="absolute"
+          p={['0.25em', '0.5em', '1em']}
+          top={0}
+          bottom={0}
+          left={0}
+          right={0}
+          display={['flex', 'flex', 'none']}
+        >
+          <Box
+            minH={['32px', '32px']}
+            maxH={['32px', '32px']}
+            h={['32px', '32px']}
           >
-            Open
-          </Button>
-          <Drawer
-            isOpen={isOpen}
-            placement="right"
-            onClose={onClose}
-            finalFocusRef={btnRef}
-            position="absolute"
-          >
-            <DrawerOverlay />
-            <DrawerContent>
-              <DrawerCloseButton />
-              <Flex direction="column" display="inherit">
-                {navBarData.map(item => (
-                  <PseudoBox
-                    as={(props): JSX.Element => (
-                      <Heading as="h3" size="md" {...props} />
-                    )}
-                    key={item}
-                    color="blood.50"
-                    px={4}
-                    py={2}
-                    _first={{
-                      marginTop: 8,
-                    }}
-                  >
-                    {item}
-                  </PseudoBox>
-                ))}
-              </Flex>
-            </DrawerContent>
-          </Drawer>
+            <Image src={Logo} maxH="inherit" />
+          </Box>
+          {navBarData.map(item => (
+            <PseudoBox
+              as={(props): JSX.Element => (
+                <Heading as="h3" fontSize={['0.66em', '0.875em']} {...props} />
+              )}
+              key={item}
+              px={['0.25em', '0.5em']}
+              my="auto"
+              _first={{ paddingLeft: 0 }}
+              _last={{ paddingRight: 0 }}
+            >
+              {item}
+            </PseudoBox>
+          ))}
         </Flex>
       </Box>
     </Box>

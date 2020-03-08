@@ -1,15 +1,15 @@
+/** @jsx jsx */
+
 import {
   Box,
   Flex,
-  Grid,
   Heading,
   Image,
   PseudoBox,
+  Text,
   theme,
 } from '@chakra-ui/core';
-import { css, Interpolation } from '@emotion/core';
-import React from 'react';
-import { findRenderedComponentWithType } from 'react-dom/test-utils';
+import { css, jsx } from '@emotion/core';
 
 import favicon from '../assets/favicon.png';
 import { placeholderData, stackedPlaceholderData } from '../data/data';
@@ -31,13 +31,18 @@ const lists = stackedPlaceholderData.map(function content(item, index) {
       _odd={{
         marginLeft: [4, 12, 24, 64],
         marginRight: 0,
-        borderRadius: '42px 0px 0px 42px',
+        bg: 'secondary',
       }}
       _even={{
         marginLeft: 0,
         marginRight: [4, 12, 24, 64],
-        borderRadius: '0px 42px 42px 0px',
+        bg: 'tertiary',
         flexDirection: ['column', 'column', 'row-reverse'],
+        css: css`
+          * {
+            align-items: flex-end !important;
+          }
+        `,
       }}
     >
       <Flex direction="column" align="center" m={4}>
@@ -80,13 +85,24 @@ const lists = stackedPlaceholderData.map(function content(item, index) {
         </Box>
         <Box>{item[4]}</Box>
       </Flex>
-      <Box w={[0, 150]} minW={[0, 150]} />
+      <Box w={[0, 0, 60, 150]} minW={[0, 0, 60, 150]} />
     </PseudoBox>
   );
 });
 
 export default function Content(): JSX.Element {
-  const bg = `${theme.colors.purple[900]}77`;
-
-  return <Box>{lists}</Box>;
+  return (
+    <Box mt={8}>
+      <Heading
+        as="h1"
+        color="blood.50"
+        fontSize="4xl"
+        textAlign="center"
+        mb={8}
+      >
+        Előadások
+      </Heading>
+      {lists}
+    </Box>
+  );
 }
