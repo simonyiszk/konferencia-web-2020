@@ -6,17 +6,17 @@ import { Parallax } from 'react-skrollr';
 
 interface PProps {
   background: string;
-  backgroundSize: string;
+  // backgroundSize: string[];
   height: string;
-  top: string;
+  /* top: string; */
   speed: string;
 }
 
 export function ParallaxHeroImage({
   background,
-  backgroundSize,
+  /* backgroundSize, */
   height,
-  top,
+  /* top, */
   speed,
   ...props
 }: PProps): JSX.Element {
@@ -34,9 +34,11 @@ export function ParallaxHeroImage({
         right={0}
         position="absolute"
         backgroundImage={`url('${background}')`}
-        backgroundSize={`${backgroundSize}`}
+        // backgroundSize={`${backgroundSize}`}
+        backgroundRepeat="no-repeat"
         height={`${height}`}
-        top={`${top}`}
+        // top={`${top}`}
+        zIndex={-1}
         willChange="transform"
         {...props}
       />

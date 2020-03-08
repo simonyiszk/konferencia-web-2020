@@ -4,10 +4,10 @@ import React from 'react';
 import { Parallax } from 'react-skrollr';
 import Sticky from 'react-sticky-el';
 
+import HeroLayer4 from '../assets/konf.png';
 import HeroBG from '../assets/star_PNG76860.png';
 import HeroLayer1 from '../assets/top-layer-1.png';
 import HeroLayer2 from '../assets/top-layer-2.png';
-import HeroLayer4 from '../assets/top-layer-4.png';
 import HeroLayer6 from '../assets/top-layer-6.png';
 import { ParallaxHeroImage } from './Components';
 import {
@@ -98,16 +98,19 @@ export function Hero2(): JSX.Element {
         background={HeroLayer6}
         backgroundSize="1920px 214px"
         height="214px"
-        top="350px"
+        top={['100px', '200px', '350px']}
         speed="300px"
+        zIndex={-3}
       />
 
       <ParallaxHeroImage
         background={HeroLayer4}
-        backgroundSize="1936px 448px"
-        height="448px"
-        top="450px"
+        backgroundSize={['640px 360px', '640px 360px', '1920px 1080px']}
+        height="1080px"
+        top={['0px', '0px', '-220px']}
         speed="0px"
+        left={['-200px', '-100px', '0px']}
+        zIndex={-2}
       />
 
       <ParallaxHeroImage
@@ -116,6 +119,7 @@ export function Hero2(): JSX.Element {
         height="280px"
         top="650px"
         speed="-300px"
+        zIndex={-1}
       />
     </Box>
   );
