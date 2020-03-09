@@ -18,6 +18,12 @@ module.exports = {
         theme_color: '#663399',
         display: 'minimal-ui',
         icon: 'src/assets/favicon.png',
+      },
+    },
+    /*
+    {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
         fonts: {
           family: `Barlow`,
           subsets: [`latin`],
@@ -25,6 +31,7 @@ module.exports = {
         },
       },
     },
+    */
     'gatsby-plugin-react-helmet-async',
     'gatsby-plugin-typescript',
   ],

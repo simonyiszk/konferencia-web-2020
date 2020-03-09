@@ -1280,6 +1280,11 @@
     "@nodelib/fs.scandir" "2.1.3"
     fastq "^1.6.0"
 
+"@openfonts/barlow_latin-ext@^1.44.0":
+  version "1.44.0"
+  resolved "https://registry.yarnpkg.com/@openfonts/barlow_latin-ext/-/barlow_latin-ext-1.44.0.tgz#bfc5581e199a7d2831d23e5f6f106da7532fd185"
+  integrity sha512-RAPWnYdbFrve1ShshwCJqLp8i/YIbNHuHmpcWgrQX83/l23pZ/ZLYO6nF5uT9Wq3OsYAAlexglh1xI6MoRF86Q==
+
 "@pieh/friendly-errors-webpack-plugin@1.7.0-chalk-2":
   version "1.7.0-chalk-2"
   resolved "https://registry.yarnpkg.com/@pieh/friendly-errors-webpack-plugin/-/friendly-errors-webpack-plugin-1.7.0-chalk-2.tgz#2e9da9d3ade9d18d013333eb408c457d04eabac0"
@@ -1574,6 +1579,11 @@
     "@types/minimatch" "*"
     "@types/node" "*"
 
+"@types/google-fonts@^1.0.0":
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/@types/google-fonts/-/google-fonts-1.0.0.tgz#0307da786a5fef3ea26c7eb581dce2d1fe03c2e7"
+  integrity sha512-nMAjInWvM/CzXMVNw2o+V4k22i3iwmOPIQRDZSwqoKeI1/QWWSBULzsCrh3EhG29COWgkynrcoVc7788HLpYlQ==
+
 "@types/history@*":
   version "4.7.4"
   resolved "https://registry.yarnpkg.com/@types/history/-/history-4.7.4.tgz#06cbceb0ace6a342a9aafcb655a688cf38f6150d"
@@ -1734,6 +1744,11 @@
   version "0.0.32"
   resolved "https://registry.yarnpkg.com/@types/tmp/-/tmp-0.0.32.tgz#0d3cb31022f8427ea58c008af32b80da126ca4e3"
   integrity sha1-DTyzECL4Qn6ljACK8yuA2hJspOM=
+
+"@types/webfontloader@^1.6.29":
+  version "1.6.29"
+  resolved "https://registry.yarnpkg.com/@types/webfontloader/-/webfontloader-1.6.29.tgz#c6b5f6eb8ca31d0aae6b02b6c1300349dd93ea8e"
+  integrity sha512-wobuM+LvpkzU296NsFVRGDAFWw3X2XEhrLHuvV+VGSbok6aOxQcymmopUFwNB69qy5oudHt9lYC0JF+z+DxFLw==
 
 "@types/yargs-parser@*":
   version "15.0.0"

@@ -1,5 +1,7 @@
 /** @jsx jsx */
 
+import '@openfonts/barlow_latin-ext';
+
 import {
   Box,
   ColorModeProvider,
@@ -76,7 +78,9 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
       <Global
         styles={css`
           * {
-            font-family: Barlow !important;
+            font-family: Barlow, -apple-system, BlinkMacSystemFont, 'Segoe UI',
+              Helvetica, Arial, sans-serif, 'Apple Color Emoji',
+              'Segoe UI Emoji', 'Segoe UI Symbol' !important;
           }
         `}
       />
@@ -101,9 +105,11 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
           >
             <Hero2 />
 
-            <NavBar />
+            <NavBar fontFamily="Barlow, system-ui, sans-serif" />
 
-            <Box as="main">{children}</Box>
+            <Box as="main" fontFamily="Barlow, system-ui, sans-serif">
+              {children}
+            </Box>
 
             <footer>{/* TODO */}</footer>
           </ParallaxProvider>
