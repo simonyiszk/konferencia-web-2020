@@ -16,7 +16,7 @@ import { Parallax, ParallaxProvider } from 'react-skrollr';
 import Sticky from 'react-sticky-el';
 
 import customTheme from '../gatsby-plugin-chakra-ui/theme';
-import { Hero2 } from './Hero';
+import Hero from './Hero';
 import NavBar from './NavBar';
 import { Parallax3DProvider } from './Parallax3D';
 
@@ -103,11 +103,11 @@ export default function Layout({ children }: LayoutProps): JSX.Element {
             ]}
             w="100vw"
           >
-            <Hero2 />
+            <Hero />
 
-            <NavBar fontFamily="Barlow, system-ui, sans-serif" />
+            <NavBar />
 
-            <Box as="main" fontFamily="Barlow, system-ui, sans-serif">
+            <Box as="main" position="relative">
               {children}
             </Box>
 

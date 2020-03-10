@@ -9,4 +9,4 @@
 declare module '*.png';
 declare module 'react-sticky-el';
 declare module 'react-skrollr';
-declare module '*.js';
+declare module 'react-countdown';

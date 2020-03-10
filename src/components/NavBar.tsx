@@ -24,7 +24,7 @@ import Logo from '../assets/logod.png';
 import LogoText from '../assets/logotextfullw.png';
 import { navBarData } from '../data/data';
 
-export default function NavBar(...propss: any[]): JSX.Element {
+export default function NavBar(): JSX.Element {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const btnRef = React.useRef();
 
